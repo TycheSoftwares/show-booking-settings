@@ -16,7 +16,7 @@ class bkap_booking_details {
 	
 	public $bkap_show_booking_details_before_column = 'date';
 
-	public function __construct( $bkap_column_key, $bkap_column_name ) {
+	public function __construct() {
 	
 		$this->bkap_column_name                          = __( 'Booking<br/>Details', 'bkap-show-booking-details' );
 		
@@ -32,7 +32,7 @@ class bkap_booking_details {
 
 			$booking_details  = '';
 			if ( isset( $booking_settings ) && 0 < count( $booking_settings ) ) {
-				if ( 'on' == $booking_settings[ 'booking_enable_date' ] ) {
+				if ( isset( $booking_settings[ 'booking_enable_date' ] ) && 'on' == $booking_settings[ 'booking_enable_date' ] ) {
 					// check booking method
 					if ( 'on' == $booking_settings[ 'booking_enable_multiple_day' ] ) {
 						_e( 'Multiple Day', 'bkap-show-booking-details' );
@@ -124,3 +124,4 @@ class bkap_booking_details {
 }
 
 $bkap_booking_details_obj = new bkap_booking_details();
+
