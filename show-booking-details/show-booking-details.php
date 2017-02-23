@@ -37,12 +37,14 @@ class bkap_booking_details {
 					if ( 'on' == $booking_settings[ 'booking_enable_multiple_day' ] ) {
 						_e( 'Multiple Day', 'bkap-show-booking-details' );
 						
-						if ( 'yes' == $booking_settings[ 'booking_fixed_block_enable' ] ) {
+						if ( isset( $booking_settings[ 'booking_fixed_block_enable' ] ) && 
+							 'yes' == $booking_settings[ 'booking_fixed_block_enable' ] ) {
 							_e( '<br/>',        'bkap-show-booking-details' );
 							_e( 'Fixed Blocks', 'bkap-show-booking-details' );
 						}
 						
-						if ( 'yes' == $booking_settings[ 'booking_block_price_enable' ] ) {
+						if ( isset( booking_settings[ 'booking_block_price_enable' ] ) && 
+							 'yes' == $booking_settings[ 'booking_block_price_enable' ] ) {
 							_e( '<br/>',          'bkap-show-booking-details' );
 							_e( 'Price by Range', 'bkap-show-booking-details' );
 						}
