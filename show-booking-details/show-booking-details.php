@@ -50,13 +50,15 @@ class bkap_booking_details {
 						}
 					} else {
 						// check if time is enabled & time slots are added
-						if ( 'on' == $booking_settings[ 'booking_enable_time' ] ) {
+						if ( isset( $booking_settings[ 'booking_enable_time' ] ) && 
+							 'on' == $booking_settings[ 'booking_enable_time' ] ) {
 							_e( 'Date & Time', 'bkap-show-booking-details' );
 						} else {
 							_e( 'Date',        'bkap-show-booking-details' );
 						}
 
-						if ( 'on' == $booking_settings[ 'booking_recurring_booking' ] ) {
+						if ( isset( $booking_settings[ 'booking_recurring_booking' ] ) && 
+							 'on' == $booking_settings[ 'booking_recurring_booking' ] ) {
 							_e( '<br/>',          'bkap-show-booking-details' );
 							_e( 'Recurring Days', 'bkap-show-booking-details' );
 							$weekdays_count      = 0;
@@ -67,7 +69,8 @@ class bkap_booking_details {
 								}
 							}
 							_e( ' (' . $weekdays_count . ')', 'bkap-show-booking-details' );
-						} elseif ( 'on' == $booking_settings[ 'booking_specific_booking' ] ) {
+						} elseif ( isset( $booking_settings[ 'booking_specific_booking' ] ) &&
+								  'on' == $booking_settings[ 'booking_specific_booking' ] ) {
 							_e( '<br/>',          'bkap-show-booking-details' );
 							_e( 'Specific Dates', 'bkap-show-booking-details' );
 							$dates_count      = count( $booking_settings[ 'booking_specific_date' ] );
@@ -75,7 +78,8 @@ class bkap_booking_details {
 						}
 					}
 					
-					if ( 'on' == $booking_settings[ 'booking_confirmation' ] ) {
+					if ( isset( $booking_settings[ 'booking_confirmation' ] ) &&
+						 'on' == $booking_settings[ 'booking_confirmation' ] ) {
 						_e( '<br/>',                 'bkap-show-booking-details' );
 						_e( 'Requires Confirmation', 'bkap-show-booking-details' );
 					}
