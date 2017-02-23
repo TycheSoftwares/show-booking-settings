@@ -78,12 +78,18 @@ class bkap_booking_details {
 						}
 					}
 					
+					/**
+					 * This is for "Requires Confirmation" setting
+					 */
 					if ( isset( $booking_settings[ 'booking_confirmation' ] ) &&
 						 'on' == $booking_settings[ 'booking_confirmation' ] ) {
 						_e( '<br/>',                 'bkap-show-booking-details' );
 						_e( 'Requires Confirmation', 'bkap-show-booking-details' );
 					}
 					
+					/**
+					 * This is for fetching settings of special price
+					 */
 					$booking_special_prices     = get_post_meta( $post_id, 'booking_special_price', true );
 					$booking_special_price_cnt  = count( $booking_special_prices );
 			
