@@ -43,7 +43,7 @@ class bkap_booking_details {
 							_e( 'Fixed Blocks', 'bkap-show-booking-details' );
 						}
 						
-						if ( isset( booking_settings[ 'booking_block_price_enable' ] ) && 
+						if ( isset( $booking_settings[ 'booking_block_price_enable' ] ) && 
 							 'yes' == $booking_settings[ 'booking_block_price_enable' ] ) {
 							_e( '<br/>',          'bkap-show-booking-details' );
 							_e( 'Price by Range', 'bkap-show-booking-details' );
